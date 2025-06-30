@@ -47,8 +47,33 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal:
 - Apache Maven  
 - API Key dari **[Google AI Studio](https://aistudio.google.com/)**
 
-### Langkah-langkah:
+Konfigurasi API Key:
+Buka file src/main/resources/application.properties
 
-1. **Clone repositori ini:**
-   ```bash
-   git clone https://github.com/username/nama-repo.git
+Ubah nilainya sebagai berikut:
+
+gemini.api.key=YOUR_API_KEY_HERE
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent
+
+🔌 Struktur API
+Aplikasi ini memiliki satu endpoint utama:
+
+Endpoint: POST /api/chat
+
+Deskripsi: Menerima pesan dari pengguna dan mengembalikan respons dari Google Gemini AI.
+{
+  "message": "Halo, apa kabar?"
+}
+
+{
+  "reply": "Kabar baik! Ada yang bisa saya bantu hari ini?"
+}
+
+💡 Ide Pengembangan Selanjutnya
+Riwayat Obrolan: Simpan percakapan ke dalam database (H2, PostgreSQL, dll).
+
+Autentikasi Pengguna: Sistem login agar tiap user memiliki riwayat sendiri.
+
+Streaming Response: Tampilkan respons AI secara bertahap (real-time streaming).
+
+Peningkatan UI/UX: Tambahkan mode gelap, ikon, animasi, dan tema.
